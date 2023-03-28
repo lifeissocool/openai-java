@@ -83,11 +83,10 @@
     if(bdTongJiToken){
       var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?" + bdTongJiToken;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();
     }
-    // 长度限制
-    const maxTokens = [[${@environment.getProperty('openai.max_tokens')}]];
+    // 提示信息
+    const tips = "[[${@environment.getProperty('openai.tips')}]]";
     // 设置提示信息
-    $("#promptText").html("ChatGPT是一个超强的Ai，它会创作、写论文、答辩、编程，绘画等<br/>\n" +
-            "由于接口是付费的，未填写APIKEY上下文Token的长度将限制为" + maxTokens + "，服务端不存储任何数据");
+    $("#promptText").html(tips);
   </script>
 </body>
 </html>

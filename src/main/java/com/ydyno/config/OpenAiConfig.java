@@ -70,6 +70,11 @@ public class OpenAiConfig {
     private String creditApi;
 
     /**
+     * 站点提示信息
+     */
+    private String tips;
+
+    /**
      * 随机获取一个ApiKey
      * @return ApiKey
      */

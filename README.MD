@@ -1,14 +1,12 @@
 ## OpenAi-Java
 
-一个基于Spring boot 2.6.4，thymeleaf 的 Openai API 的简单包装项目
+一个基于Spring boot 2.6.4，thymeleaf，gpt-3.5模型的Openai-Java-Web项目
 
-前端界面基于Hostloc论坛流出的源码修改而来，目前支持的功能如下
+前端界面基于`Hostloc`论坛流出的源码修改而来，目前支持的功能如下
 
 - 支持余额查询
 - 支持随机获取Key，支持自定义Key
-- 支持对话与生成图片，连续对话
-
-**注意**：Openai API 并未开放连续对话的API，因此连续对话功能受上下文Tokens长度影响只能进行简单的对话
+- 支持生成图片，连续对话(基于gpt-3.5模型)
 
 ### 项目截图
 
@@ -22,6 +20,7 @@ docker镜像地址与教程：https://hub.docker.com/r/dqjdda/openai-java
 # 替换 KEYS 即可
 # 参数教程见：https://hub.docker.com/r/dqjdda/openai-java
 # Arm 机器实用 dqjdda/openai-java:arm64 镜像
+# TIPS 是网站首页的提示信息，不支持html语法
 docker run -d \
 --name openai --restart always \
 -p 18080:18080 \
@@ -29,6 +28,7 @@ docker run -d \
 -e TEMPERATURE=0.6 \
 -e KEYS=sk-xxxx,sk-xxxx \
 -e BD_TONG_JI_TOKEN= \
+-e TIPS="ChatGPT 是一个超强的人工智能语言模型，它会创作、写论文、答辩、编程，绘画等" \
 dqjdda/openai-java
 ```
 

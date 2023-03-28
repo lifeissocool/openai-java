@@ -28,6 +28,8 @@ openai:
   image_api: https://kill-whole.azurewebsites.net/api/HttpImageService?token=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
   # 余额查询的API
   credit_api: https://api.openai.com/dashboard/billing/credit_grants
+  # 提示信息
+  tips: ${TIPS:ChatGPT 是一个超强的人工智能语言模型，它会创作、写论文、答辩、编程，绘画等}
   # ${名称:值} 格式以便于在环境变量中配置，默认只需修改值即可
 
 baidu:
