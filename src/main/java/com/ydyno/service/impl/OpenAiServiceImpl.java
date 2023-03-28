@@ -162,7 +162,7 @@ public class OpenAiServiceImpl implements OpenAiService {
         // 调用接口
         HttpResponse result;
         try {
-            result = HttpRequest.post(openAiConfig.getOpenaiApi())
+            result = HttpRequest.post(openAiConfig.getOpenaiApi()+"?token="+apikey)
                     .header(Header.CONTENT_TYPE, "application/json")
                     .header(Header.AUTHORIZATION, "Bearer " + apikey)
                     .body(JSONUtil.toJsonStr(params))
@@ -232,7 +232,7 @@ public class OpenAiServiceImpl implements OpenAiService {
                 MapUtil.entry("size", "256x256")
         );
         // 调用接口
-        String result = HttpRequest.post(openAiConfig.getImageApi())
+        String result = HttpRequest.post(openAiConfig.getImageApi()+"?token="+apikey)
                 .header(Header.CONTENT_TYPE, "application/json")
                 .header(Header.AUTHORIZATION, "Bearer " + apikey)
                 .body(JSONUtil.toJsonStr(params))
