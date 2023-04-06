@@ -43,7 +43,7 @@ function webSocketInit() {
             const id = idVal.val()
             const contentHtml = $("#content" + number)
             const articleWrapper = $("#article-wrapper");
-            if(id === "1"){
+            if(id === "1"||id==="3"){
                 keepText += msg.data;
                 contentHtml.removeClass("hide-class");
                 contentHtml.find("pre").html(contentHtml.find("pre").html() + msg.data);
@@ -159,7 +159,7 @@ function createArticle(title) {
 
     kwTarget.val("")
 
-    if(idVal.val() === "1"){
+    if(idVal.val() === "1"||idVal.val()==="3"){
         articleWrapper.append(
             '<li class="article-content hide-class" id=content' +
             number +
