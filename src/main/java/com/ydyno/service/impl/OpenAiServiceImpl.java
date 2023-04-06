@@ -97,11 +97,14 @@ public class OpenAiServiceImpl implements OpenAiService {
             switch (openAiDto.getId()){
                 // 文本问答
                 case 1:
-                    textQuiz(maxTokens, openAiDto, apikey, webSocketServer);
+                    textQuiz(openAiConfig.getOldModel(),maxTokens, openAiDto, apikey, webSocketServer);
                     break;
                 // 图片生成
                 case 2:
                     imageQuiz(openAiDto, apikey, webSocketServer);
+                    break;
+                case 3:
+                    textQuiz(openAiConfig.getModel(),maxTokens, openAiDto, apikey, webSocketServer);
                     break;
                 // 默认
                 default:
@@ -121,7 +124,7 @@ public class OpenAiServiceImpl implements OpenAiService {
      * @param apikey          apikey
      * @param webSocketServer /
      */
-    private void textQuiz(Integer maxTokens, OpenAiRequest openAiRequest, String apikey, WebSocketServer webSocketServer) throws Exception {
+    private void textQuiz(String modelName,Integer maxTokens, OpenAiRequest openAiRequest, String apikey, WebSocketServer webSocketServer) throws Exception {
         // 构建对话参数
         List<Map<String, String>> messages = new ArrayList<>();
         // 如果是连续对话，逐条添加对话内容
@@ -155,7 +158,7 @@ public class OpenAiServiceImpl implements OpenAiService {
         Map<String, Object> params = MapUtil.ofEntries(
                 MapUtil.entry("stream", true),
                 MapUtil.entry("max_tokens", maxTokens),
-                MapUtil.entry("model", openAiConfig.getModel()),
+                MapUtil.entry("model", modelName),
                 MapUtil.entry("temperature", openAiConfig.getTemperature()),
                 MapUtil.entry("messages", messages)
         );

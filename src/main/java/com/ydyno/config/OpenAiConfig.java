@@ -43,6 +43,7 @@ public class OpenAiConfig {
      * OpenAi的model
      */
     private String model;
+    private String oldModel;
 
     /**
      * OpenAi的max_tokens
