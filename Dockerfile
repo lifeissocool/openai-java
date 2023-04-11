@@ -8,7 +8,7 @@ COPY src ./src
 # Build a release artifact.
 RUN mvn package -DskipTests
 
-ENV OPENAI_API_KEY=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
+ENV OPENAI_KEYS=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
 
 # Run the web service on container startup.
 ENTRYPOINT ["java","-jar","/app/target/openai-1.0.0.war","--spring.profiles.active=prod"]
