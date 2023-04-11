@@ -24,9 +24,9 @@ openai:
   # 多个Key用,分割
   keys: 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
   # 综合问答API
-  openai_api: https://kill-whole.azurewebsites.net/api/HttpExample
+  openai_api: https://api.openai.com/v1/chat/completions
   # 图片问答API
-  image_api: https://kill-whole.azurewebsites.net/api/HttpImageService
+  image_api: https://api.openai.com/v1/images/generations
   # 余额查询的API
   credit_api: https://api.openai.com/dashboard/billing/credit_grants
   # 提示信息
