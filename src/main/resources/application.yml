@@ -22,7 +22,7 @@ openai:
   model: gpt-4
   old_model: gpt-3.5-turbo
   # 多个Key用,分割
-  keys: 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
+  keys: ${OPENAI_API_KEY=你的API_KEY}
   # 综合问答API
   openai_api: https://api.openai.com/v1/chat/completions
   # 图片问答API
