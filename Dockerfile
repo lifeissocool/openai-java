@@ -1,5 +1,13 @@
-FROM openjdk:8
-ADD target/openai-1.0.0.war app.war
-RUN bash -c 'touch /app.war'
-ENTRYPOINT 9915
-ENTRYPOINT ["java", "-jar", "/app.war"]
+FROM maven:3.8.1-jdk-8-slim as builder
+
+# Copy local code to the container image.
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+
+# Build a release artifact.
+RUN mvn package -DskipTests
+
+
+# Run the web service on container startup.
+ENTRYPOINT ["java","-jar","/app/target/openai-1.0.0.war","--spring.profiles.active=prod"]
