@@ -25,6 +25,7 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.ydyno.config.OpenAiConfig;
 import com.ydyno.service.WebSocketServer;
+import com.ydyno.service.dto.BaseAiRequest;
 import com.ydyno.service.dto.OpenAiRequest;
 import com.ydyno.service.dto.OpenAiResult;
 import com.ydyno.service.OpenAiService;
@@ -115,6 +116,8 @@ public class OpenAiServiceImpl implements OpenAiService {
             webSocketServer.sendMessage("出错了：" + e.getMessage());
         }
     }
+
+
 
     /**
      * 文本问答

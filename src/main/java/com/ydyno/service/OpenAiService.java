@@ -15,6 +15,7 @@
  */
 package com.ydyno.service;
 
+import com.ydyno.service.dto.BaseAiRequest;
 import com.ydyno.service.dto.OpenAiRequest;
 import com.ydyno.service.dto.OpenAiResult;
 
@@ -39,4 +40,5 @@ public interface OpenAiService {
      * @param webSocketServer /
      */
     void communicate(OpenAiRequest openAiDto, WebSocketServer webSocketServer) throws Exception;
+
 }

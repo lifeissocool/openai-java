@@ -75,6 +75,11 @@ public class OpenAiConfig {
      */
     private String tips;
 
+    private String zhipuApiKey;
+    private String baiduApiKey;
+    private String baichuanApiKey;
+    private String aliApiKey;
+    private String moonshotApiKey;
     /**
      * 随机获取一个ApiKey
      * @return ApiKey
